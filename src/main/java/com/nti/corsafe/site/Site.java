@@ -10,8 +10,7 @@ import java.util.List;
 @Data
 @Node
 public class Site {
-
-    @Relationship(type = "address")
+    @Relationship(type = "located-at")
     private Address address;
     private String name;
     private boolean headOffice;

@@ -20,12 +20,13 @@ public class CarrierService {
         return carrierRepository.findByName(name);
     }
 
-    public List<Carrier> findByCategory(String category) {
-        return carrierRepository.findByCategory(category);
+    public List<Carrier> findByCategory(Category category) {
+        return carrierRepository.findByCategory(category.name());
     }
 
-    public Carrier addCarrier(Carrier consignor) {
-        consignor.setId(UUID.randomUUID().toString());
-        return carrierRepository.save(consignor);
+    public Carrier addCarrier(Carrier carrier) {
+        carrier.setId(UUID.randomUUID().toString());
+        return carrierRepository.save(carrier);
     }
+
 }

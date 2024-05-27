@@ -28,7 +28,7 @@ public class CarrierController {
     }
 
     @GetMapping("/category/{category}")
-    public NTIResponse<List<Carrier>> findByCategory(@PathVariable String category) {
+    public NTIResponse<List<Carrier>> findByCategory(@PathVariable Category category) {
         return new NTIResponse<>(HttpStatus.OK.value(), null,
                 carrierService.findByCategory(category));
     }
