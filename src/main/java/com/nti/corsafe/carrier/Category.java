@@ -1,7 +1,7 @@
 package com.nti.corsafe.carrier;
 
 public enum Category {
-    LOW,
+    SMALL,
     MEDIUM,
     LARGE
 }

@@ -1,7 +1,9 @@
 package com.nti.corsafe.consigner;
 
+import com.nti.corsafe.carrier.Carrier;
 import com.nti.corsafe.common.model.NTIResponse;
 import lombok.AllArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,24 +20,27 @@ public class ConsignorController {
 
     @GetMapping("/list")
     public NTIResponse<List<Consignor>> getAll() {
-        return new NTIResponse<>(HttpStatus.OK.value(), null,
-                consignorService.getAll());
+        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.getAll());
     }
 
     @GetMapping("/name/{name}")
-    public Consignor findByName(@PathVariable String name) {
-        return consignorService.findByConsignorName(name);
-    }
-
-    @GetMapping("/category/{category}")
-    public NTIResponse<List<Consignor>> findByCategory(@PathVariable String category) {
-        return new NTIResponse<>(HttpStatus.OK.value(), null,
-                consignorService.findByCategory(category));
+    public NTIResponse<Consignor> findByName(@PathVariable String name) {
+        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.findByConsignorName(name));
     }
 
     @PostMapping("/add")
-    public Consignor add(@RequestBody Consignor consignor) {
-        return consignorService.addConsignor(consignor);
+    public NTIResponse<Consignor> add(@RequestBody Consignor consignor) {
+        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.addConsignor(consignor));
+    }
+
+    @PostMapping("/{id}/Carrier/add")
+    public NTIResponse<Consignor> addCarrier(@PathVariable String id, @RequestBody Carrier carrier) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.addCarrier(id, carrier));
+    }
+
+    @PostMapping("/{id}/Carrier/{carrierId}")
+    public NTIResponse<Consignor> addCarrier(@PathVariable String id, @PathVariable String carrierId) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.addCarrier(id, carrierId));
     }
 
     /*@PostMapping("add/movie")

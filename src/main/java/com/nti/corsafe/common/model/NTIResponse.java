@@ -14,4 +14,13 @@ public class NTIResponse<T> {
         this.message = message;
         this.data = data;
     }
+
+    public NTIResponse(int status, T data) {
+        this.status = status;
+        this.data = data;
+    }
+
+    public NTIResponse(int status) {
+        this.status = status;
+    }
 }
