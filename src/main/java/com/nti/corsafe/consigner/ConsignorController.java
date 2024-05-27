@@ -1,6 +1,6 @@
 package com.nti.corsafe.consigner;
 
-import com.nti.corsafe.common.NTIResponse;
+import com.nti.corsafe.common.model.NTIResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

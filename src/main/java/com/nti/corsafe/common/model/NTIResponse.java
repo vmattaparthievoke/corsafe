@@ -1,4 +1,4 @@
-package com.nti.corsafe.common;
+package com.nti.corsafe.common.model;
 
 import lombok.Data;
 
