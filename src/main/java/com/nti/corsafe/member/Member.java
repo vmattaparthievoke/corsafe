@@ -15,6 +15,6 @@ public class Member {
     private String id;
     private String name;
     private String phoneNumber;
-    @Relationship(type = "positioned-as")
+    @Relationship(type = "can-perform")
     private List<Role> role;
 }
