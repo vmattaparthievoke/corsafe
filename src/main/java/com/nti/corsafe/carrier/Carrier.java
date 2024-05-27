@@ -19,6 +19,7 @@ public class Carrier {
     private String website;
     private String email;
     private String helplineNumber;
+    @Relationship(type="operating-at")
     private List<Site> sites;
 
 }
