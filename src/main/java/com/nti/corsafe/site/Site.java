@@ -11,6 +11,7 @@ import java.util.List;
 @Node
 public class Site {
 
+    @Relationship(type = "address")
     private Address address;
     private String name;
     private boolean headOffice;
