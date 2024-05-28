@@ -61,6 +61,9 @@ public class ConsignorService {
         }
 
     }
+    public void deleteConsignorAndRelations(String id) {
+        consignorRepository.deleteConsignorAndRelations(id);
+    }
 /*
     public Consignor deleteRelationByConsignor(String name) {
         System.out.println("name is::" + name);

@@ -46,10 +46,12 @@ public class ConsignorController {
     /*@PostMapping("add/movie")
     public User addMovie(@RequestParam String userName, @RequestBody List<MovieRequest> movieRequestList) {
         return userService.addMovie(userName, movieRequestList);
-    }
-
-    @DeleteMapping("delete")
-    public User deleteRelationByUser(@RequestParam String name) {
-        return userService.deleteRelationByUser(name);
     }*/
+
+    //delete consignor node and it's relations
+    @DeleteMapping("/{id}")
+    public NTIResponse<String> deleteConsignor(@PathVariable String id) {
+        consignorService.deleteConsignorAndRelations(id);
+        return new NTIResponse<>(HttpStatus.OK.value(), "Consignor deleted successfully");
+    }
 }
