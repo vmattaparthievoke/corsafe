@@ -2,6 +2,7 @@ package com.nti.corsafe.site;
 
 import com.nti.corsafe.member.Member;
 import lombok.Data;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -14,8 +15,8 @@ import java.util.List;
 public class Site {
 
     @Id
-    private String id;
-    @Relationship(type = "located-at")
+    @GeneratedValue
+    private Long id;
     private Address address;
     private String name;
     private boolean headOffice;

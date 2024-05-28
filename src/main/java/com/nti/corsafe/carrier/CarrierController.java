@@ -1,6 +1,7 @@
 package com.nti.corsafe.carrier;
 
 import com.nti.corsafe.common.model.NTIResponse;
+import com.nti.corsafe.site.Site;
 import lombok.AllArgsConstructor;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,10 @@ public class CarrierController {
     @PutMapping("/update")
     public NTIResponse<Carrier> update(@RequestBody Carrier carrier) throws BadRequestException {
         return new NTIResponse<>(HttpStatus.OK.value(), "Updated Successfully", carrierService.update(carrier));
+    }
+
+    @PostMapping("/{id}/site/add")
+    public NTIResponse<Site> add(@PathVariable String id, @RequestBody Site site) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK.value(), "Site Added Successfully", carrierService.addSite(id, site));
     }
 }

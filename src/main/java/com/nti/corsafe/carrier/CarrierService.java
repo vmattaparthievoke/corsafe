@@ -1,9 +1,7 @@
 package com.nti.corsafe.carrier;
 
-import com.nti.corsafe.common.exception.UniqueConstraintException;
 import com.nti.corsafe.site.Site;
 import com.nti.corsafe.site.SiteRepository;
-import jakarta.validation.ConstraintViolationException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,11 +37,7 @@ public class CarrierService {
             throw new BadRequestException();
         }
         carrier.setId(UUID.randomUUID().toString());
-        try{
-            return carrierRepository.save(carrier);
-        }catch (Exception e){
-            throw new UniqueConstraintException(carrier.getName() +" Carrier already exists." );
-        }
+        return carrierRepository.save(carrier);
     }
 
     public Carrier update(Carrier carrier) throws BadRequestException {
@@ -65,7 +59,6 @@ public class CarrierService {
             throw new BadRequestException("Invalid Carrier Id");
         } else {
             Carrier carrier = optionalCarrier.get();
-            site.setId(UUID.randomUUID().toString());
             carrier.getSites().add(site);
             return siteRepository.save(site);
         }
