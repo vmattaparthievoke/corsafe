@@ -75,7 +75,8 @@ public class SiteService {
     public void deleteSites(List<Site> sites) {
         for (Site site : sites) {
             memberService.deleteMembers(Stream.of(Collections.singletonList(site.getSiteOwner()), site.getDrivers(),
-                    site.getSiteManagers(), site.getSiteInspectors(),site.getSiteComplianceManager(),site.getSiteAdminstrator()).flatMap(Collection::stream).toList());
+                    site.getSiteManagers(), site.getSiteInspectors(),Collections.singletonList(site.getSiteComplianceManager()),
+                    Collections.singletonList(site.getSiteAdminstrator())).flatMap(Collection::stream).toList());
             siteRepository.delete(site);
         }
     }

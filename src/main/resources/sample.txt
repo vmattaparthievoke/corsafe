@@ -16,6 +16,12 @@ MATCH (n) DETACH DELETE n
   "helplineNumber": "123456789"
 }
 
+{
+ "name": "DEFConsignee",
+  "website": "DEFConsignee.com",
+  "email": "email@DEFConsignor.com",
+  "helplineNumber": "32442423"
+  }
 
 {
       "address": {
