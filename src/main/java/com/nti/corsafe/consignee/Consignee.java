@@ -1,7 +1,7 @@
-package com.nti.corsafe.consigner;
-
+package com.nti.corsafe.consignee;
 
 import com.nti.corsafe.carrier.Carrier;
+import com.nti.corsafe.site.Address;
 import com.nti.corsafe.site.Site;
 import lombok.Data;
 import org.springframework.data.neo4j.core.schema.Id;
@@ -13,8 +13,7 @@ import java.util.List;
 
 @Node
 @Data
-public class Consignor {
-
+public class Consignee {
     @Id
     private String id;
     private String name;
@@ -25,6 +24,4 @@ public class Consignor {
     private List<Carrier> carriers = new ArrayList<>();
     @Relationship(type = "operating-at")
     private List<Site> sites = new ArrayList<>();
-
-
 }

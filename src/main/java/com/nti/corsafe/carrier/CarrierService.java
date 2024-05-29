@@ -80,4 +80,19 @@ public class CarrierService {
             throw new BadRequestException("Invalid Carrier Id");
         }
     }
+    //add subcontractors to carrier
+    public Carrier addSubcontractor(String id, Carrier subcontractor) throws BadRequestException {
+        if (StringUtils.isEmpty(id)) {
+            throw new BadRequestException();
+        }
+        Optional<Carrier> optionalCarrier = carrierRepository.findById(id);
+        if (optionalCarrier.isEmpty()) {
+            throw new BadRequestException("Invalid Carrier Id");
+        } else {
+            Carrier carrier = optionalCarrier.get();
+            subcontractor.setId(UUID.randomUUID().toString());
+            carrier.getSubContractors().add(subcontractor);
+            return carrierRepository.save(carrier);
+        }
+    }
 }

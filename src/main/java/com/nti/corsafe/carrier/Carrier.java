@@ -21,5 +21,7 @@ public class Carrier {
     private String helplineNumber;
     @Relationship(type="operating-at")
     private List<Site> sites = new ArrayList<>();
+    @Relationship(type = "sub-contractor", direction = Relationship.Direction.INCOMING)
+    private List<Carrier> subContractors = new ArrayList<>();
 
 }

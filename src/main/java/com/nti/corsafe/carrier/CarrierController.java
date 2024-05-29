@@ -54,4 +54,9 @@ public class CarrierController {
         carrierService.deleteById(id);
         return new NTIResponse<>(HttpStatus.OK, "Carrier deleted successfully");
     }
+    //add subcontractor to carrier
+    @PostMapping("/{id}/subcontractor/add")
+    public NTIResponse<Carrier> addSubcontractor(@PathVariable String id, @RequestBody Carrier subcontractor) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Subcontractor Added Successfully", carrierService.addSubcontractor(id, subcontractor));
+    }
 }

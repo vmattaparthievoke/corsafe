@@ -27,5 +27,15 @@ public class Site {
     private List<Member> siteManagers = new ArrayList<>();
     @Relationship(type = "siteInspector")
     private List<Member> siteInspectors = new ArrayList<>();
+    @Relationship(type = "siteComplianceManager")
+    private Member siteComplianceManager;
+    @Relationship(type = "siteAdminstrator")
+    private Member siteAdminstrator;
+
+
+
+
+
+
 
 }

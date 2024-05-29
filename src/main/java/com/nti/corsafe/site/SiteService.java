@@ -59,6 +59,12 @@ public class SiteService {
                 case SITE_MANAGER:
                     site.getSiteManagers().add(member);
                     break;
+                case SITE_COMPLIANCE_MANAGER:
+                    site.setSiteComplianceManager(member);
+                    break;
+                case SITE_ADMINISTRATOR:
+                    site.setSiteAdminstrator(member);
+                    break;
                 default:
                     System.out.println("Unknown role.");
                     break;
@@ -69,7 +75,7 @@ public class SiteService {
     public void deleteSites(List<Site> sites) {
         for (Site site : sites) {
             memberService.deleteMembers(Stream.of(Collections.singletonList(site.getSiteOwner()), site.getDrivers(),
-                    site.getSiteManagers(), site.getSiteInspectors()).flatMap(Collection::stream).toList());
+                    site.getSiteManagers(), site.getSiteInspectors(),site.getSiteComplianceManager(),site.getSiteAdminstrator()).flatMap(Collection::stream).toList());
             siteRepository.delete(site);
         }
     }
