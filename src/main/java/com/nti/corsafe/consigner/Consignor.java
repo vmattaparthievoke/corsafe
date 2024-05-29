@@ -21,7 +21,7 @@ public class Consignor {
     private String website;
     private String email;
     private String helplineNumber;
-    @Relationship(type = "carrier")
+    @Relationship(type = "carrier", direction = Relationship.Direction.INCOMING)
     private List<Carrier> carriers = new ArrayList<>();
     @Relationship(type = "operating-at")
     private List<Site> sites = new ArrayList<>();

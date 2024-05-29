@@ -20,6 +20,6 @@ public class SiteController {
 
     @PostMapping("/{id}/Member/add")
     public NTIResponse<Site> addMember(@PathVariable String id, @RequestBody List<MemberRequest> memberRequests) throws BadRequestException {
-        return new NTIResponse<>(HttpStatus.OK.value(), siteService.addMember(id, memberRequests));
+        return new NTIResponse<>(HttpStatus.OK, siteService.addMember(id, memberRequests));
     }
 }

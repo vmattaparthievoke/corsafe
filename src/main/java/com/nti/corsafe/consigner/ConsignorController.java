@@ -20,36 +20,33 @@ public class ConsignorController {
 
     @GetMapping("/list")
     public NTIResponse<List<Consignor>> getAll() {
-        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.getAll());
+        return new NTIResponse<>(HttpStatus.OK, consignorService.getAll());
     }
 
     @GetMapping("/name/{name}")
     public NTIResponse<Consignor> findByName(@PathVariable String name) {
-        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.findByConsignorName(name));
+        return new NTIResponse<>(HttpStatus.OK, consignorService.findByConsignorName(name));
     }
 
     @PostMapping("/add")
     public NTIResponse<Consignor> add(@RequestBody Consignor consignor) {
-        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.addConsignor(consignor));
+        return new NTIResponse<>(HttpStatus.OK, consignorService.addConsignor(consignor));
     }
 
     @PostMapping("/{id}/Carrier/add")
     public NTIResponse<Consignor> addCarrier(@PathVariable String id, @RequestBody Carrier carrier) throws BadRequestException {
-        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.addCarrier(id, carrier));
+        return new NTIResponse<>(HttpStatus.OK, consignorService.addCarrier(id, carrier));
     }
 
     @PostMapping("/{id}/Carrier/{carrierId}")
     public NTIResponse<Consignor> addCarrier(@PathVariable String id, @PathVariable String carrierId) throws BadRequestException {
-        return new NTIResponse<>(HttpStatus.OK.value(), consignorService.addCarrier(id, carrierId));
+        return new NTIResponse<>(HttpStatus.OK, consignorService.addCarrier(id, carrierId));
     }
 
-    /*@PostMapping("add/movie")
-    public User addMovie(@RequestParam String userName, @RequestBody List<MovieRequest> movieRequestList) {
-        return userService.addMovie(userName, movieRequestList);
+    //delete consignor node and it's relations
+    @DeleteMapping("/{id}")
+    public NTIResponse<Void> deleteById(@PathVariable String id) {
+        consignorService.deleteById(id);
+        return new NTIResponse<>(HttpStatus.OK, "Consignor deleted successfully");
     }
-
-    @DeleteMapping("delete")
-    public User deleteRelationByUser(@RequestParam String name) {
-        return userService.deleteRelationByUser(name);
-    }*/
 }

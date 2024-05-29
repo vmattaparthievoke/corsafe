@@ -12,7 +12,6 @@ import java.util.List;
 @Node
 @Data
 public class Carrier {
-
     @Id
     private String id;
     private String name;

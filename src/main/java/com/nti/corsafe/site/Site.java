@@ -2,10 +2,7 @@ package com.nti.corsafe.site;
 
 import com.nti.corsafe.member.Member;
 import lombok.Data;
-import org.springframework.data.neo4j.core.schema.GeneratedValue;
-import org.springframework.data.neo4j.core.schema.Id;
-import org.springframework.data.neo4j.core.schema.Node;
-import org.springframework.data.neo4j.core.schema.Relationship;
+import org.springframework.data.neo4j.core.schema.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +14,7 @@ public class Site {
     @Id
     @GeneratedValue
     private Long id;
+    @CompositeProperty(prefix = "address", converter = AddressConverter.class)
     private Address address;
     private String name;
     private boolean headOffice;
