@@ -1,5 +1,4 @@
-package com.nti.corsafe.consigner;
-
+package com.nti.corsafe.consignee;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.nti.corsafe.carrier.Carrier;
@@ -13,25 +12,20 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.nti.corsafe.common.util.constants.CommonConstant.*;
-
 @Node
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class Consignor {
-
+public class Consignee {
     @Id
     private String id;
     private String name;
     private String website;
     private String email;
     private String helplineNumber;
-    @Relationship(type = COMPLIANCE_MANAGER)
+    @Relationship(type = "COMPLIANCE_MANAGER")
     private Member complianceManager;
-    @Relationship(type = CARRIER)
+    @Relationship(type = "CARRIER", direction = Relationship.Direction.INCOMING)
     private List<Carrier> carriers = new ArrayList<>();
-    @Relationship(type = SITE)
+    @Relationship(type = "SITE")
     private List<Site> sites = new ArrayList<>();
-
-
 }

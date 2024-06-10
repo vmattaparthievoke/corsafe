@@ -1,0 +1,80 @@
+{
+  "name": "Lendlease",
+  "website": "Lendlease.com",
+  "email": "email@Lendlease.com",
+  "helplineNumber": "(02) 8227 7700",
+  "sites": [
+    {
+      "address": {
+        "addressLine1": "Level 41",
+        "addressLine2": " Governor Phillip Tower 1",
+        "street": "Farrer Place",
+        "city": "Sydney",
+        "state": "New South Wales",
+        "country": "Australia",
+        "zip": "2000"
+      },
+      "name": "HO-Lendlease",
+      "headOffice": true,
+      "functions": [
+        "Unloading, Warehousing"
+      ],
+      "siteComplianceManager": {
+        "name": "Lucas",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "siteManagers": [
+        {
+          "name": "Michael",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "siteAdministrator": {
+        "name": "Merrit",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "unloadingManagers": [
+        {
+          "name": "Oscar",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ]
+    }
+  ]
+}

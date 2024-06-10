@@ -1,7 +1,9 @@
 package com.nti.corsafe.carrier;
 
-import com.nti.corsafe.common.NTIResponse;
+import com.nti.corsafe.common.model.NTIResponse;
+import com.nti.corsafe.site.Site;
 import lombok.AllArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,25 +18,45 @@ public class CarrierController {
     @Autowired
     CarrierService carrierService;
 
+    @PostMapping("/add")
+    public NTIResponse<Carrier> add(@RequestBody Carrier carrier) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Added Successfully", carrierService.add(carrier));
+    }
+
+    @PostMapping("/{id}/site/add")
+    public NTIResponse<Site> add(@PathVariable String id, @RequestBody Site site) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Site Added Successfully", carrierService.addSite(id, site));
+    }
+
+    @PutMapping("/update")
+    public NTIResponse<Carrier> update(@RequestBody Carrier carrier) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Updated Successfully", carrierService.update(carrier));
+    }
+
     @GetMapping("/list")
     public NTIResponse<List<Carrier>> getAll() {
-        return new NTIResponse<>(HttpStatus.OK.value(), null,
-                carrierService.getAll());
+        return new NTIResponse<>(HttpStatus.OK, carrierService.getAll());
     }
 
     @GetMapping("/name/{name}")
-    public Carrier findByName(@PathVariable String name) {
-        return carrierService.findByCarrierName(name);
+    public NTIResponse<Carrier> findByName(@PathVariable String name) {
+        return new NTIResponse<>(HttpStatus.OK, carrierService.findByCarrierName(name));
     }
 
     @GetMapping("/category/{category}")
-    public NTIResponse<List<Carrier>> findByCategory(@PathVariable String category) {
-        return new NTIResponse<>(HttpStatus.OK.value(), null,
-                carrierService.findByCategory(category));
+    public NTIResponse<List<Carrier>> findByCategory(@PathVariable Category category) {
+        return new NTIResponse<>(HttpStatus.OK, carrierService.findByCategory(category));
     }
 
-    @PostMapping("/add")
-    public Carrier add(@RequestBody Carrier consignor) {
-        return carrierService.addCarrier(consignor);
+    //delete consignor node and it's relations
+    @DeleteMapping("/{id}")
+    public NTIResponse<Void> deleteById(@PathVariable String id) throws BadRequestException {
+        carrierService.deleteById(id);
+        return new NTIResponse<>(HttpStatus.OK, "Carrier deleted successfully");
+    }
+    //add subcontractor to carrier
+    @PostMapping("/{id}/subcontractor/add")
+    public NTIResponse<Carrier> addSubcontractor(@PathVariable String id, @RequestBody Carrier subcontractor) throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Subcontractor Added Successfully", carrierService.addSubcontractor(id, subcontractor));
     }
 }
