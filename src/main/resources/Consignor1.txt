@@ -1,0 +1,232 @@
+{
+  "name": "BlueScope",
+  "website": "BlueScope.com",
+  "email": "email@BlueScope.com",
+  "helplineNumber": "(02) 8227 7700",
+  "complianceManager": {
+    "name": "Charlie",
+    "phoneNumber": "(02) 8227 7700",
+    "address": {
+      "addressLine1": "Level 41",
+      "addressLine2": " Governor Phillip Tower 1",
+      "street": "Farrer Place",
+      "city": "Sydney",
+      "state": "New South Wales",
+      "country": "Australia",
+      "zip": "2000"
+    }
+  },
+  "sites": [
+    {
+      "address": {
+        "addressLine1": "Level 41",
+        "addressLine2": " Governor Phillip Tower 1",
+        "street": "Farrer Place",
+        "city": "Sydney",
+        "state": "New South Wales",
+        "country": "Australia",
+        "zip": "2000"
+      },
+      "name": "HO BlueScope",
+      "headOffice": true,
+      "functions": [
+        "Production, Supply, Loading"
+      ],
+      "siteComplianceManager": {
+        "name": "Gilbert",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "siteManagers": [
+        {
+          "name": "Gore",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "siteAdministrator": {
+        "name": "Gosa",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "floorIncharges": [
+        {
+          "name": "Haden",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "Harry",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "Ivor",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "loadingManagers": [
+        {
+          "name": "Henry",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ]
+    },
+    {
+      "address": {
+        "addressLine1": "Level 41",
+        "addressLine2": " Governor Phillip Tower 1",
+        "street": "Farrer Place",
+        "city": "Sydney",
+        "state": "New South Wales",
+        "country": "Australia",
+        "zip": "2000"
+      },
+      "name": "CNOR1-1",
+      "headOffice": false,
+      "functions": [
+        "Warehousing"
+      ],
+      "siteComplianceManager": {
+        "name": "Jimm",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "siteManagers": [
+        {
+          "name": "Jomon",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "siteAdministrator": {
+        "name": "Jonathan",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "floorIncharges": [
+        {
+          "name": "Lawrence",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "Leo",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "Louis",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ]
+    }
+  ]
+}

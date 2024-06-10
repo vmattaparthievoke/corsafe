@@ -1,0 +1,80 @@
+{
+  "name": "BESIX Watpac",
+  "website": "BESIXWatpac.com",
+  "email": "email@BESIXWatpac.com",
+  "helplineNumber": "(02) 8227 7700",
+  "sites": [
+    {
+      "address": {
+        "addressLine1": "Level 41",
+        "addressLine2": " Governor Phillip Tower 1",
+        "street": "Farrer Place",
+        "city": "Brisbane",
+        "state": "New South Wales",
+        "country": "Australia",
+        "zip": "2000"
+      },
+      "name": "HO-BESIX Watpac",
+      "headOffice": true,
+      "functions": [
+        "Warehousing"
+      ],
+      "siteComplianceManager": {
+        "name": "Oliver",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Brisbane",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "siteManagers": [
+        {
+          "name": "Butler",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Brisbane",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "siteAdministrator": {
+        "name": "Henry",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Brisbane",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "unloadingManagers": [
+        {
+          "name": "Quinn",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Brisbane",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ]
+    }
+  ]
+}

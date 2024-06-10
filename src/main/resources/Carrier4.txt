@@ -1,0 +1,133 @@
+{
+  "name": "DHL",
+  "fleetType": "Medium",
+  "website": "dhl.com",
+  "email": "email@dhl.com",
+  "helplineNumber": "(02) 8227 7700",
+  "complianceManager": {
+    "name": "Stephen",
+    "phoneNumber": "(02) 8227 7700",
+    "address": {
+      "addressLine1": "Level 42",
+      "addressLine2": " Governor Phillip Tower 1",
+      "street": "Farrer Place",
+      "city": "Sydney",
+      "state": "New South Wales",
+      "country": "Australia",
+      "zip": "2000"
+    }
+  },
+  "sites": [
+    {
+      "address": {
+        "addressLine1": "Level 42",
+        "addressLine2": " Governor Phillip Tower 1",
+        "street": "Farrer Place",
+        "city": "Brisbane",
+        "state": "Australian Capital Territory",
+        "country": "Australia",
+        "zip": "2600"
+      },
+      "name": "Brisbane",
+      "headOffice": true,
+      "functions": [
+        "Loading, Unloading, Transporting, Warehousing"
+      ],
+      "siteComplianceManager": {
+        "name": "Tobias",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      },
+      "drivers": [
+        {
+          "name": "Victor",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "Watson",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "William",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        },
+        {
+          "name": "Adoni",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "siteManagers": [
+        {
+          "name": "Amaroo",
+          "phoneNumber": "(02) 8227 7700",
+          "address": {
+            "addressLine1": "Level 41",
+            "addressLine2": " Governor Phillip Tower 1",
+            "street": "Farrer Place",
+            "city": "Sydney",
+            "state": "New South Wales",
+            "country": "Australia",
+            "zip": "2000"
+          }
+        }
+      ],
+      "siteAdministrator": {
+        "name": "Bearchan",
+        "phoneNumber": "(02) 8227 7700",
+        "address": {
+          "addressLine1": "Level 41",
+          "addressLine2": " Governor Phillip Tower 1",
+          "street": "Farrer Place",
+          "city": "Sydney",
+          "state": "New South Wales",
+          "country": "Australia",
+          "zip": "2000"
+        }
+      }
+    }
+  ]
+}
