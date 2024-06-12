@@ -1,6 +1,6 @@
 package com.nti.corsafe.carrier;
 
-public enum Category {
+public enum FleetType {
     SMALL,
     MEDIUM,
     LARGE

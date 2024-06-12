@@ -8,13 +8,13 @@ import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import static com.nti.corsafe.member.Role.valueOf;
+import static com.nti.corsafe.common.util.constants.RoleConstant.*;
 
 @Service
 public class SiteService {
@@ -36,7 +36,8 @@ public class SiteService {
             memberRequests.forEach(memberRequest -> {
                 Member member = Member.builder()
                         .name(memberRequest.getName())
-                        .skills(memberRequest.getSkills())
+                        .phoneNumber(memberRequest.getPhoneNumber())
+                        .address(memberRequest.getAddress())
                         .build();
                 addMemberWithRespectToRole(site, member, memberRequest.getRoles());
             });
@@ -46,15 +47,15 @@ public class SiteService {
 
     private void addMemberWithRespectToRole(Site site, Member member, List<String> roles) {
         roles.forEach(role -> {
-            switch (valueOf(role)) {
+            switch (role) {
                 case DRIVER:
                     site.getDrivers().add(member);
                     break;
-                case SITE_INSPECTOR:
-                    site.getSiteInspectors().add(member);
+                case LOADING_MANAGER:
+                    site.getLoadingManagers().add(member);
                     break;
-                case SITE_OWNER:
-                    site.setSiteOwner(member);
+                case UNLOADING_MANAGER:
+                    site.getUnloadingManagers().add(member);
                     break;
                 case SITE_MANAGER:
                     site.getSiteManagers().add(member);
@@ -63,7 +64,13 @@ public class SiteService {
                     site.setSiteComplianceManager(member);
                     break;
                 case SITE_ADMINISTRATOR:
-                    site.setSiteAdminstrator(member);
+                    site.setSiteAdministrator(member);
+                    break;
+                case FLEET_MANAGER:
+                    site.getFleetManagers().add(member);
+                    break;
+                case FLOOR_INCHARGE:
+                    site.getFloorIncharges().add(member);
                     break;
                 default:
                     System.out.println("Unknown role.");
@@ -74,9 +81,11 @@ public class SiteService {
 
     public void deleteSites(List<Site> sites) {
         for (Site site : sites) {
-            memberService.deleteMembers(Stream.of(Collections.singletonList(site.getSiteOwner()), site.getDrivers(),
-                    site.getSiteManagers(), site.getSiteInspectors(),Collections.singletonList(site.getSiteComplianceManager()),
-                    Collections.singletonList(site.getSiteAdminstrator())).flatMap(Collection::stream).toList());
+            memberService.deleteMembers(Stream.of(site.getDrivers(), site.getSiteManagers(),
+                            site.getFloorIncharges(), Arrays.asList(site.getSiteComplianceManager(),
+                                    site.getSiteAdministrator()), site.getUnloadingManagers(),
+                            site.getLoadingManagers(), site.getFleetManagers())
+                    .flatMap(Collection::stream).toList());
             siteRepository.delete(site);
         }
     }

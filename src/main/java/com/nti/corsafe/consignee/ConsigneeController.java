@@ -25,7 +25,7 @@ public class ConsigneeController {
     }
     //create consignee
     @PostMapping("/add")
-    public NTIResponse<Consignee> add(Consignee consignee) {
+    public NTIResponse<Consignee> add(@RequestBody Consignee consignee) {
         return new NTIResponse<>(HttpStatus.OK, consigneeService.addConsignee(consignee));
     }
     //find conignee by name
