@@ -30,8 +30,8 @@ public class CarrierService {
         return carrierRepository.findByName(name);
     }
 
-    public List<Carrier> findByCategory(Category category) {
-        return carrierRepository.findByCategory(category.name());
+    public List<Carrier> findByFleetType(FleetType fleetType) {
+        return carrierRepository.findByFleetType(fleetType.name());
     }
 
     public Carrier add(Carrier carrier) throws BadRequestException {
@@ -93,6 +93,26 @@ public class CarrierService {
             subcontractor.setId(UUID.randomUUID().toString());
             carrier.getSubContractors().add(subcontractor);
             return carrierRepository.save(carrier);
+        }
+    }
+
+    //add subcontractors to carrier
+    public Carrier addSubcontractor(String id, String subcontractorId) throws BadRequestException {
+        if (StringUtils.isEmpty(id)) {
+            throw new BadRequestException();
+        }
+        Optional<Carrier> optionalCarrier = carrierRepository.findById(id);
+        if (optionalCarrier.isEmpty()) {
+            throw new BadRequestException("Invalid Carrier Id");
+        } else {
+            Carrier carrier = optionalCarrier.get();
+            Optional<Carrier> optionalSubContractor = carrierRepository.findById(subcontractorId);
+            if (optionalSubContractor.isEmpty()) {
+                throw new BadRequestException("Invalid SubContractor Id");
+            } else {
+                carrier.getSubContractors().add(optionalSubContractor.get());
+                return carrierRepository.save(carrier);
+            }
         }
     }
 }

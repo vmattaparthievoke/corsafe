@@ -44,8 +44,8 @@ public class CarrierController {
     }
 
     @GetMapping("/category/{category}")
-    public NTIResponse<List<Carrier>> findByCategory(@PathVariable Category category) {
-        return new NTIResponse<>(HttpStatus.OK, carrierService.findByCategory(category));
+    public NTIResponse<List<Carrier>> findByCategory(@PathVariable FleetType fleetType) {
+        return new NTIResponse<>(HttpStatus.OK, carrierService.findByFleetType(fleetType));
     }
 
     //delete consignor node and it's relations
@@ -54,9 +54,19 @@ public class CarrierController {
         carrierService.deleteById(id);
         return new NTIResponse<>(HttpStatus.OK, "Carrier deleted successfully");
     }
+
     //add subcontractor to carrier
     @PostMapping("/{id}/subcontractor/add")
-    public NTIResponse<Carrier> addSubcontractor(@PathVariable String id, @RequestBody Carrier subcontractor) throws BadRequestException {
-        return new NTIResponse<>(HttpStatus.OK, "Subcontractor Added Successfully", carrierService.addSubcontractor(id, subcontractor));
+    public NTIResponse<Carrier> addSubcontractor(@PathVariable String id, @RequestBody Carrier subcontractor)
+            throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Subcontractor Added Successfully",
+                carrierService.addSubcontractor(id, subcontractor));
+    }
+
+    @PostMapping("/{id}/subcontractor/{subContractorId}")
+    public NTIResponse<Carrier> addSubcontractor(@PathVariable String id, @PathVariable String subContractorId)
+            throws BadRequestException {
+        return new NTIResponse<>(HttpStatus.OK, "Subcontractor Added Successfully",
+                carrierService.addSubcontractor(id, subContractorId));
     }
 }

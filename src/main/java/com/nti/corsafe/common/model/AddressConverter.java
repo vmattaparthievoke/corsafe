@@ -1,8 +1,5 @@
-package com.nti.corsafe.site;
+package com.nti.corsafe.common.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.neo4j.driver.Value;
 import org.neo4j.driver.Values;
 import org.springframework.data.neo4j.core.convert.Neo4jConversionService;
@@ -13,22 +10,7 @@ import org.springframework.lang.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Address {
-
-    private String addressLine1;
-    private String addressLine2;
-    private String street;
-    private String city;
-    private String state;
-    private String country;
-    private String zip;
-
-}
-
-class AddressConverter implements Neo4jPersistentPropertyToMapConverter<String, Address> {
+public class AddressConverter implements Neo4jPersistentPropertyToMapConverter<String, Address> {
 
     @NonNull
     @Override

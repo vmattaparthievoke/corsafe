@@ -9,7 +9,7 @@ public interface CarrierRepository extends Neo4jRepository<Carrier, String> {
 
     Carrier findByName(String name);
 
-    List<Carrier> findByCategory(String category);
+    List<Carrier> findByFleetType(String fleetType);
 
     @Query("MATCH (c:Carrier)-[r]-() WHERE c.id = $id DELETE r, c")
     void deleteAlongWithRelationship(String id);
